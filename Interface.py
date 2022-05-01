@@ -37,7 +37,7 @@ class MenuBar(Menu):
         self.add_cascade(label="Ayuda", menu=help)
 
     def about(self):
-        messagebox.showinfo('Universidad El Bosque', 'Extenseión pensada para el software de procesamiento de vídeo deportivo Kinovea, con el fin de proveer una herramienta de visualización partiendo de la lectura de archivos .csv')
+        messagebox.showinfo('Universidad El Bosque', 'Extensión pensada para el software de procesamiento de vídeo deportivo Kinovea, con el fin de proveer una herramienta de visualización partiendo de la lectura de archivos .csv')
 
 class DataTable(ttk.Treeview):
     def __init__(self,parent):
@@ -150,7 +150,7 @@ class SearchPage(tk.Frame):
             return
         
         file_path = self.path_map[self.file_names_listbox.get(self.file_names_listbox.curselection())]
-        df = pd.read_csv(file_path, header=0, delimiter=';')
+        df = pd.read_csv(file_path, header=0, delimiter=';', decimal = ',')
 
         # print(df.columns[0]) #Da el nombre de los datos (header)
         # print(df.columns[1])
@@ -159,6 +159,7 @@ class SearchPage(tk.Frame):
         ax.plot(df[df.columns[0]], df[df.columns[1]])
         ax.set_xlabel(df.columns[0])
         ax.set_ylabel(df.columns[1])
+        ax.set_title(self.file_names_listbox.get(self.file_names_listbox.curselection()))
 
         fig.set_size_inches(7,5)
         fig.set_dpi(100)
