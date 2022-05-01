@@ -168,4 +168,5 @@ class SearchPage(tk.Frame):
 
 if __name__ == '__main__':
     root = Application()
+    root.iconbitmap('Universidad-El-Bosque_0.ico')
     root.mainloop()
