@@ -31,7 +31,7 @@ class MenuBar(Menu):
         file.add_separator()
         file.add_command(label="Salir", underline=1, command=self.quit)
         self.add_cascade(label="Archivo", underline=0,menu=file)
-
+    
         help = Menu(self, tearoff=0)  
         help.add_command(label="Sobre nosotros", command=self.about)  
         self.add_cascade(label="Ayuda", menu=help)
